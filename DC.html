@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <title>Love Proposal 💖</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align:center;
+                background-color: #ffccdc;
+                display: flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                margin:0;
+                ;
+            }
+            h1{
+                color:#d63384;
+            }
+            .button{
+                margin-top: 20px;
+            }
+            button{
+                font-size:20px;
+                padding:10px 20px;
+                margin:10px;
+                border:none;
+                cursor:pointer;
+                border-radius:10px;
+                transition:transform 0.2s;
+            }
+            #yesBtn{
+                background-color:#e22145;
+                color:white;
+
+
+            }
+            #noBtn{
+                background-color:#6c757d;
+                color:white;
+                position:absolute;
+
+
+            }
+            #message,#kissHug{
+                display:none;
+            }
+            #message{
+                display:none;
+                font-size:24px;
+                color:#d63384;
+                margin-top:20px;
+                animation:heartbeat 1s infinite alternate;
+
+            }
+            @keyframes heartbeat{
+                from{
+                    transform:scale(1);
+
+                }
+                to{
+                    transform:scale(1.2);
+                }
+            }
+            .kiss-hug{
+                display:none;
+                font-size: 30px;
+                margin-top:20px;
+                animation:fadeIn 2s;
+            }
+            @keyframes fadeIn{
+                from{
+                    opacity:0;
+                }
+                to{
+                    opacity:1;
+                }
+            }
+        </style>
+        <body>
+            <h1 id="question">
+                Do You Love Me Kanda?💕&#x1F97A;
+            </h1>
+            <div class="buttons" id="buttonContainer">
+                <button id="yesBtn"onclick="yesClick()">Yes &#x1F648;💖</button>
+                <button id="noBtn"onmouseover="moveButton()">No &#x1F60F;</button>
+
+            </div>
+            <p id="message">Ya my Boy i know that you love me &#x1F601; &#x2764;💋<br>Ummmmmmaaaaa 💋💋 Love you kandaaaaa!</p>
+            <p id="kissHug"class="kiss-hug"></p>
+            <script>
+                function yesClick(){
+                    document.getElementById("message").style.display="block";
+                    document.getElementById("kissHug").style.display="block";
+                    document.getElementById("question").style.display="none";
+                    document.getElementById("buttonContainer").style.display = "none"; 
+
+                   
+                }
+                function moveButton(){
+                    let x= Math.random()*(window.innerWidth-100);
+                    let y=Math.random()*(window.innerHeight-50);
+                    document.getElementById("noBtn").style.left=x+"px";
+                    document.getElementById("noBtn").style.top=y+"px";
+                }
+            </script>
+        </body>
+
+    </head>
+</html>
